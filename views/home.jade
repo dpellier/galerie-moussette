@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  div#homeGallery
+    each image in images
+      div.home-img.hidden
+        img(src='#{image.url}')
+      
+  script(type='text/javascript', charset='utf-8')
+    $('.slide_loading').show();
+    $('#homeGallery').imagesLoaded({
+      progress: function() {
+        createPolaroid(this);
+      },
+      callback: function() {
+        $('.home-img').removeClass('hidden');
+        $('.slide_loading').hide();
+      }
+    });

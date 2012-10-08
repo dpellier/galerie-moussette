@@ -1,0 +1,41 @@
+extends layout
+
+block content
+  div.screen-margin
+    div.row-fluid
+      div.span3
+      div.span6.misc-content.contact
+        div.row
+          div.span3
+            span Votre email :&nbsp;
+          div.span6
+            input#email(type='email').w100
+          div#warnMail.warning.span3.hidden
+            p Email incorrect
+        div.row
+          div.span3
+            span Votre message :&nbsp;
+          div.span6
+            textarea#mailText(rows='', cols='')
+          div#warnText.warning.span3.p20.hidden
+            p N'oubliez pas d'écrire un message
+        div.row.mt10
+          div.span3
+          div.span6.centered
+            input(type='submit', value='Envoyer', onclick='sendMail();')
+        
+        div.row
+              div.span3
+              div.span6.centered
+                p.mail-ko.hidden Votre message n'a pas pu être envoyé
+                p.mail-ok.hidden Votre message a bien été envoyé
+        div#fp_loading.fp_loading
+        //
+          if sended
+            div.row
+              div.span3
+              div.span6.centered
+                if sended == 'error'
+                  p.mail-ko Votre message n'a pas pu être envoyé
+                else
+                  p.mail-ok Votre message a bien été envoyé

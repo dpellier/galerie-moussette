@@ -1,0 +1,134 @@
+.title {
+	text-align: center;
+	margin: auto;
+	padding: 15px;
+	background-color: white;
+}
+
+.divider-v {
+	height: 40px;
+	margin: 0px;
+	border-right: 1px solid white;
+	border-left: 1px solid #F2F2F2;
+}
+
+a {
+  outline:none;
+}
+
+body {
+  background-color: #E6E6E6 !important;
+}
+
+.unselectable {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.miss {
+  background: url(../images/404.jpg) no-repeat white;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 112px;
+  left: 0px;
+}
+
+.misc-content {
+	padding-top: 10px;
+	background-color: white;
+	-moz-box-shadow: 0px 0px 10px #000;
+	-webkit-box-shadow: 0px 0px 10px black;
+	box-shadow: 0px 0px 10px black;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.screen-margin {
+	margin: 0 30px;
+}
+
+.text-content {
+	padding: 10px 10px 0 10px;
+	text-align: justify;
+}
+
+.pt15 {
+	padding-top: 15px;
+}
+
+.prl5 {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.centered {
+	text-align: center;
+}
+
+.home-img {
+	position: fixed;
+	border: solid;
+}
+
+.home-img img {
+  border: solid white;
+}
+
+.hidden {
+	display: none !important;
+}
+
+.contact {
+	padding-top: 20px;
+}
+
+.contact textarea {
+	width: 100%;
+	height: 200px;
+	margin: 0;
+	resize: none;
+}
+
+.contact span {
+	padding-left: 40px;
+	vertical-align: middle;
+}
+
+.contact div.span3 {
+	text-align: right;
+}
+
+.w100 {
+	width: 100%;
+}
+
+.mt10 {
+	margin-top: 10px;
+}
+
+.p20 {
+	padding: 20px;
+}
+
+.warning {
+	color: orange;
+	text-align: center !important;
+}
+
+.mail-ok {
+	color: #088A08;
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+
+.mail-ko {
+  color: red;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
