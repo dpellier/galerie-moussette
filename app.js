@@ -9,6 +9,7 @@ var express = require('express')
   , myself = require('./routes/myself')
   , arts = require('./routes/arts')
   , contact = require('./routes/contact')
+  , config = require('./config').config()
   , http = require('http')
   , path = require('path');
 
@@ -16,12 +17,12 @@ var app = express();
 
 app.use(mailer({
 	  from: 'no-reply@example.com',
-	  host: 'smtp.gmail.com',
+	  host: config.smtp,
 	  secureConnection: true,
 	  port: 465,
 	  auth: {
-	    user: 'dpellier@gmail.com',
-	    pass: 'reforgemoi'
+	    user: config.mailLogin,
+	    pass: config.mailPwd
 	  }
 }));
 
