@@ -1,4 +1,4 @@
-extends layout
+extends menu
 
 block content
   div#fp_thumbContainer
@@ -8,7 +8,7 @@ block content
           div.content
             div
               a(href='#')
-                img(src='#{image.url}', alt='#{image.url}').thumb
+                img(src='data:image/jpg;base64,' + image.data, alt='data:image/jpg;base64,' + image.data).thumb
   div#fp_scrollWrapper.fp_scrollWrapper
     span#fp_prev_thumb.fp_prev_thumb
     div#slider.slider

@@ -1,0 +1,23 @@
+extends admin
+
+block content
+  div.row-fluid
+    div.span4
+    div.span4
+      div.thumbnail.bg_white
+        h4.centered Images
+        button.btn.admin_btn(onclick='window.location.href="/admin/arts/pictures"')
+          img(src='images/btnImg.png')
+          p Modifier les Photos
+        button.btn.admin_btn(onclick='window.location.href="/admin/arts/collages"')
+          img(src='images/btnImg.png')
+          p Modifier les Collages
+        button.btn.admin_btn(onclick='window.location.href="/admin/arts/drawings"')
+          img(src='images/btnImg.png')
+          p Modifier les Dessins
+      
+      
+      //
+        button.btn.admin_btn(onclick='window.location.href="/admin/text"')
+          img(src='images/btnText.png')
+          p TEXTE

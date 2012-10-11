@@ -6,8 +6,7 @@ db = mongoose.connect(config.databaseUri);
 
 var Image = db.model('Image', new Schema({
 	'type': {type: String, index: true},
-	'data': String,
-	'url' : String
+	'data': String
 }));
 
 exports.Image = Image;

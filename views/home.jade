@@ -1,10 +1,10 @@
-extends layout
+extends menu
 
 block content
   div#homeGallery
     each image in images
       div.home-img.hidden
-        img(src='#{image.url}')
+        img(src='data:image/jpg;base64,' + image.data)
       
   script(type='text/javascript', charset='utf-8')
     $('.slide_loading').show();

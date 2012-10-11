@@ -9,6 +9,7 @@ var express = require('express')
   , myself = require('./routes/myself')
   , arts = require('./routes/arts')
   , contact = require('./routes/contact')
+  , admin = require('./routes/admin')
   , config = require('./config').config()
   , http = require('http')
   , path = require('path');
@@ -16,7 +17,7 @@ var express = require('express')
 var app = express();
 
 app.use(mailer({
-	  from: 'no-reply@example.com',
+	  from: 'no-reply@galerie-moussette.com',
 	  host: config.smtp,
 	  secureConnection: true,
 	  port: 465,
@@ -26,7 +27,7 @@ app.use(mailer({
 	  }
 }));
 
-app.configure(function(){
+app.configure(function() {
   app.set('port', process.env.PORT || 3000);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
@@ -38,7 +39,7 @@ app.configure(function(){
   app.use(app.router);
 });
 
-app.configure('development', function(){
+app.configure('development', function() {
   app.use(express.errorHandler());
 });
 
@@ -53,11 +54,14 @@ app.get('/collages', arts.list);
 //app.get('/drawings', arts.list);
 app.get('/contact', contact.render);
 app.post('/send', contact.send);
+app.post('/upload/:type', admin.upload);
+app.get('/admin', admin.main);
+app.get('/admin/arts/:type', admin.editArts);
 
-app.get('*', function(req, res){
+app.get('*', function(req, res) {
   res.render('404');
 });
 
-http.createServer(app).listen(app.get('port'), function(){
+http.createServer(app).listen(app.get('port'), function() {
   console.log("Express server listening on port " + app.get('port'));
 });

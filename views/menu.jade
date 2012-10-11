@@ -1,0 +1,32 @@
+extends layout
+
+block menu
+  h1.title La Galerie de Moussette
+  div.navbar.navbar-inner
+    div.container
+      ul.nav
+        li
+          a(href='/') Accueil
+        li.divider-v.nomargin
+        li
+          a(href='/myself') Qui suis je ?
+        li.divider-v.nomargin
+        li.dropdown
+          a.dropdown-toggle(data-toggle='dropdown', href='#') Mes Oeuvres&nbsp;
+            b.caret
+          ul#artList.dropdown-menu
+            li#artListPictures
+              a(href='/pictures') Mes Photos
+            li#artListCollages
+              a(href='/collages') Mes Collages
+            li#artListDrawings
+              a(href='/drawings') Mes Dessins
+        li.divider-v.nomargin
+        li
+          a(href='/works') Mes Réalisations
+        li.divider-v.nomargin
+        li
+          a(href='/projects') Mes Projets
+        li.divider-v.nomargin
+        li
+          a(href='/contact') Me contacter

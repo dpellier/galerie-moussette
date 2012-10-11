@@ -1,0 +1,22 @@
+extends admin
+
+block content
+  h2.centered Administration de la galerie
+  div.admin-back
+    button.btn(onclick='window.location.href = "/admin";')
+      span Retour au menu >>
+  div.row-fluid
+    div.span5
+      div.img-list
+        each image in images
+          div.img-min
+            img(src='data:Image;base64,' + image.data, onclick='showAdminImg();')
+    div.span1
+    div.span5
+      div.admin-menu
+        span Ajouter une image :&nbsp;
+        form(action='/upload/'+type, method='post', enctype='multipart/form-data')
+          input(type='file', name='displayImage')
+          input(type='submit', value='GO !')
+      div.admin-preview
+      

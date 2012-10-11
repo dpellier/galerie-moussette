@@ -20,6 +20,10 @@ body {
   background-color: #E6E6E6 !important;
 }
 
+.bg_white {
+	background-color: white;
+}
+
 .unselectable {
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
@@ -116,6 +120,21 @@ body {
 	padding: 20px;
 }
 
+.admin_btn {
+	margin-bottom: 10px !important;
+	font-family: 'Montserrat Alternates', sans-serif;
+	width: 100%;
+}
+
+.admin_btn img {
+  float: left;
+}
+
+.admin_btn p {
+	float: left;
+	margin-top: 50px;
+}
+
 .warning {
 	color: orange;
 	text-align: center !important;
@@ -131,4 +150,41 @@ body {
   color: red;
   font-weight: bold;
   padding-bottom: 10px;
+}
+
+.admin-back {
+	position: fixed;
+	top: 5px;
+	right: 0;
+	margin-right: 10px;
+}
+
+.admin-menu {
+	background-color: white;
+  margin: 5px;
+  border: solid 1px;
+  padding: 5px 10px;
+}
+
+.img-list {
+	background-color: white;
+	margin: 5px;
+	border: solid 1px;
+	float: left;
+}
+
+.img-min {
+	height: 100px;
+	border: solid 1px;
+	float: left;
+	margin: 5px;
+}
+
+.img-min img {
+	height: inherit;
+	cursor: pointer;
+}
+
+.img-min img:hover {
+  opacity: 0.5;
 }
