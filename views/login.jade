@@ -1,0 +1,16 @@
+extends admin
+
+block content
+  div.row-fluid
+    div.span4
+    div.span4.login.common-back
+      form.centered(action='/login', method='post', enctype='multipart/form-data')
+        div
+          span Nom d'utilisateur :&nbsp;
+          input(type='text', name='username')
+        div
+          span Mot de passe :&nbsp;
+          input(type='password', name='password')
+        input.btn(type='submit', value='Se connecter')
+        if error
+          p.error.mt10 #{error}

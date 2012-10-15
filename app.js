@@ -10,6 +10,7 @@ var express = require('express')
   , arts = require('./routes/arts')
   , contact = require('./routes/contact')
   , admin = require('./routes/admin')
+  , login = require('./routes/login')
   , config = require('./config').config()
   , http = require('http')
   , path = require('path');
@@ -35,6 +36,8 @@ app.configure(function() {
   app.use(express.logger('dev'));
   app.use(express.bodyParser());
   app.use(express.methodOverride());
+  app.use(express.cookieParser('coucou, tu veux voir m...on secret'));
+  app.use(express.session());
   app.use(express.static(path.join(__dirname, 'public')));
   app.use(app.router);
 });
@@ -51,12 +54,16 @@ app.get('/', home.render);
 app.get('/myself', myself.render);
 app.get('/pictures', arts.list);
 app.get('/collages', arts.list);
-//app.get('/drawings', arts.list);
+app.get('/drawings', arts.list);
 app.get('/contact', contact.render);
 app.post('/send', contact.send);
-app.post('/upload/:type', admin.upload);
+
+app.post('/login', login.authenticate);
+app.get('/login', login.login);
+app.get('/logout', login.logout);
 app.get('/admin', admin.main);
-app.get('/admin/arts/:type', admin.editArts);
+app.get('/admin/:media/:type', admin.main);
+app.post('/upload/:type', admin.upload);
 
 app.get('*', function(req, res) {
   res.render('404');

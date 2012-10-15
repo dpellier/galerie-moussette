@@ -1,22 +1,33 @@
 extends admin
 
 block content
+  h2.centered.mb20 Administration du site
+  div.logout
+    button.btn(onclick='window.location.href = "/logout";')
+      span Se déconnecter
+  div.admin-back
+    button.btn(onclick='window.location.href = "/";')
+      span Retour au site
   div.row-fluid
-    div.span4
-    div.span4
-      div.thumbnail.bg_white
-        h4.centered Images
+    div.span2
+    div.span3.common-back
+      h4.centered Images
+      div.ml30.pb10
         button.btn.admin_btn(onclick='window.location.href="/admin/arts/pictures"')
-          img(src='images/btnImg.png')
-          p Modifier les Photos
+          img(src='images/btnPicture.jpg')
+        span.admin_txt Modifier les Photos
+      div.ml30.pb10
         button.btn.admin_btn(onclick='window.location.href="/admin/arts/collages"')
-          img(src='images/btnImg.png')
-          p Modifier les Collages
+          img(src='images/btnCollage.jpg')
+        span.admin_txt Modifier les Collages
+      div.ml30.pb10
         button.btn.admin_btn(onclick='window.location.href="/admin/arts/drawings"')
-          img(src='images/btnImg.png')
-          p Modifier les Dessins
-      
-      
+          img(src='images/btnDrawing.jpg')
+        span.admin_txt Modifier les Dessins
+    div.span1
+    div.span3.common-back
+      h4.centered Contenu
+      span Coming Soon ...
       //
         button.btn.admin_btn(onclick='window.location.href="/admin/text"')
           img(src='images/btnText.png')

@@ -1,18 +1,22 @@
 extends admin
 
 block content
-  h2.centered Administration de la galerie
+  h2.centered.mb20 Administration de la galerie
+  div.logout
+    button.btn(onclick='window.location.href = "/logout";')
+      span Se déconnecter
   div.admin-back
     button.btn(onclick='window.location.href = "/admin";')
       span Retour au menu >>
   div.row-fluid
+    div.span1
     div.span5
       div.img-list
         each image in images
           div.img-min
             img(src='data:Image;base64,' + image.data, onclick='showAdminImg();')
     div.span1
-    div.span5
+    div.span4
       div.admin-menu
         span Ajouter une image :&nbsp;
         form(action='/upload/'+type, method='post', enctype='multipart/form-data')
