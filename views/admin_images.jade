@@ -1,7 +1,8 @@
 extends admin
 
 block content
-  h2.centered.mb20 Administration de la galerie
+  h2.centered.mb20.title-font Administration de la galerie
+  input(id='type', type='hidden', value='' + type)
   div.logout
     button.btn(onclick='window.location.href = "/logout";')
       span Se déconnecter
@@ -9,18 +10,21 @@ block content
     button.btn(onclick='window.location.href = "/admin";')
       span Retour au menu >>
   div.row-fluid
+    div.span2
+    div.span8.common-back.img-list
+      each image in images
+        div.img-min
+          img(src='data:Image;base64,' + image.data)
     div.span1
-    div.span5
-      div.img-list
-        each image in images
-          div.img-min
-            img(src='data:Image;base64,' + image.data, onclick='showAdminImg();')
-    div.span1
-    div.span4
-      div.admin-menu
-        span Ajouter une image :&nbsp;
-        form(action='/upload/'+type, method='post', enctype='multipart/form-data')
-          input(type='file', name='displayImage')
-          input(type='submit', value='GO !')
-      div.admin-preview
-      
+      div.common-back.admin-img-btn
+        form(id='uploadForm', action='/upload/'+type, method='post', enctype='multipart/form-data', style='margin:0')
+          input.hidden(type='file', id='browseImage', name='browseImage', onchange='uploadImage();')
+        img(src='/images/add.png', title='Ajouter une nouvelle image', onclick='browseImage();')
+      div.common-back.admin-img-btn
+        img.enabled.hidden(src='/images/zoom.png', title='Afficher l&rsquo;image')
+        img.disabled(src='/images/zoom-disable.png', title='Aucune image sélectionnée')
+      div.common-back.admin-img-btn
+        img.enabled.hidden(src='/images/delete.png', title='Supprimer l&rsquo;image')
+        img.disabled(src='/images/delete-disable.png', title='Aucune image sélectionnée')
+  script(type='text/javascript', charset='utf-8')
+    $('.img-min > img').click(enableMenu);
