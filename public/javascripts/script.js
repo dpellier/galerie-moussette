@@ -54,13 +54,14 @@ function applyBrowserCssProperty(elem, values) {
 		elem.css(values.Safari.name, values.Safari.value);
 }
 
+// TODO move this to the contact view
 function sendMail() {
 	var email = $('#email').val(),
 		text = $('#mailText').val(),
 		ok = true;
 	
-	$('.mail-ok').addClass('hidden');
-	$('.mail-ko').addClass('hidden');
+	$('.validation').addClass('hidden');
+	$('.error').addClass('hidden');
 	
 	if (!/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email)) {
 		$('#warnMail').removeClass('hidden');
@@ -78,11 +79,11 @@ function sendMail() {
 		$('#fp_loading').show();
 		$.post('/send', {email: email, text: text})
 			.success(function() {
-				$('.mail-ok').removeClass('hidden');
+				$('.validation').removeClass('hidden');
 				$('#fp_loading').hide();
 			})
 			.error(function() {
-				$('.mail-ko').removeClass('hidden');
+				$('.error').removeClass('hidden');
 				$('#fp_loading').hide();
 			});
 	}

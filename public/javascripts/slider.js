@@ -114,7 +114,7 @@ function openGallery($gallery) {
             //we may want that the closest picture to the center 
             //of the window stays centered. Uncomment the following line
             //if you want that behavior
-            checkClosest();
+            //checkClosest();
         }
     });
     //open the gallery and show the slider

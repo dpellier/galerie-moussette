@@ -1,0 +1,4 @@
+div#homeGallery
+  each image in images
+    div.home-img.hidden
+      img(src='data:image/jpg;base64,' + image.get('data'))
