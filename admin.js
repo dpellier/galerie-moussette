@@ -32,13 +32,7 @@ exports.upload = function(req, res) {
 			if (err) {
 				console.log(err);
 				res.send(500);
-			} /*else {
-				// TODO update this to dynamic rendering
-				Image.find({type: type}, 'data', function(err, documents) {
-					res.render('admin_images', {images: documents, type: type});
-				});
-			}*/
-			else
+			} else
 				res.redirect('back');
 		});
  	});
