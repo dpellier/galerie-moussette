@@ -1,11 +1,7 @@
-
-/**
- * Module dependencies.
- */
-
 var express = require('express')
   , mailer = require('express-mailer')
   , Image = require('./models/models').Image
+  , Work = require('./models/models').Work
   , login = require('./login')
   , admin = require('./admin')
   , config = require('./config').config()
@@ -70,6 +66,11 @@ app.get('/api/collages', function(req, res) {
 app.get('/api/drawings', function(req, res) {
 	return Image.find({type: 'drawings'}, function(err, images) {
 		return res.send(images);
+	});
+});
+app.get('/api/works', function(req, res) {
+	return Work.find({}, function(err, works) {
+		return res.send(works);
 	});
 });
 

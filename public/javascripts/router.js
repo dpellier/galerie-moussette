@@ -5,6 +5,7 @@ App.MainRouter = Backbone.Router.extend({
 		"pictures": "pictures",
 		"collages": "collages",
 		"drawings": "drawings",
+		"works": "works",
 		"contact": "contact"
 	},
 	home: function() {
@@ -21,6 +22,9 @@ App.MainRouter = Backbone.Router.extend({
 	},
 	drawings: function() {
 		var drawingsView = new App.DrawingsView();
+	},
+	works: function() {
+		var worksView = new App.WorksView();
 	},
 	contact: function() {
 		var contactView = new App.ContactView();

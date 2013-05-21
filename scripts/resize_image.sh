@@ -1,9 +1,9 @@
 #!/bin/bash
 
-echo "Which folder do you want to resize : "
-read folder
+#echo "Which folder do you want to resize : "
+#read folder
 
-cd ../public/images/"$folder"
+cd /home/sfeir/Pictures/theGallery/static/pictures
 
 mkdir initial-size
 cp *.* ./initial-size/

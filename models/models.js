@@ -15,5 +15,12 @@ var User = db.model('User', new Schema({
 	'password': String
 }));
 
+var Work = db.model('Work', new Schema({
+	'icon': String,
+	'order': Number,
+	'content': String
+}));
+
 exports.Image = Image;
 exports.User = User;
+exports.Work = Work;

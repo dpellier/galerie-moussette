@@ -6,36 +6,6 @@ var jade=function(exports){Array.isArray||(Array.isArray=function(arr){return"[o
 
 // create our folder objects
 
-// email.jade compiled template
-exports.email = function anonymous(locals, attrs, escape, rethrow, merge) {
-    attrs = attrs || jade.attrs;
-    escape = escape || jade.escape;
-    rethrow = rethrow || jade.rethrow;
-    merge = merge || jade.merge;
-    var buf = [];
-    with (locals || {}) {
-        var interp;
-        var __indent = [];
-        buf.push('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\n<html>\n  <head>\n    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>\n  </head>\n  <body>\n    <p>Hello</p>\n    <p>text= text</p>\n    <p>{#text}</p>\n  </body>\n</html>');
-    }
-    return buf.join("");
-};
-
-// contact.jade compiled template
-exports.contact = function anonymous(locals, attrs, escape, rethrow, merge) {
-    attrs = attrs || jade.attrs;
-    escape = escape || jade.escape;
-    rethrow = rethrow || jade.rethrow;
-    merge = merge || jade.merge;
-    var buf = [];
-    with (locals || {}) {
-        var interp;
-        var __indent = [];
-        buf.push('\n<div class="screen-margin">\n  <div class="row-fluid">\n    <div class="span3"></div>\n    <div class="span6 common-back pt10 contact">\n      <div class="row">\n        <div class="span3"><span>Votre email :&nbsp;</span></div>\n        <div class="span6">\n          <input id="email" type="email" class="w100"/>\n        </div>\n        <div id="warnMail" class="warning span3 hidden">\n          <p>Email incorrect</p>\n        </div>\n      </div>\n      <div class="row">\n        <div class="span3"><span>Votre message :&nbsp;</span></div>\n        <div class="span6">\n          <textarea id="mailText" rows="" cols=""></textarea>\n        </div>\n        <div id="warnText" class="warning span3 p20 hidden">\n          <p>N\'oubliez pas d\'écrire un message</p>\n        </div>\n      </div>\n      <div class="row mt10">\n        <div class="span3"></div>\n        <div class="span6 centered">\n          <input type="submit" value="Envoyer" onclick="sendMail();"/>\n        </div>\n      </div>\n      <div class="row">\n        <div class="span3"></div>\n        <div class="span6 centered">\n          <p class="error hidden">Votre message n\'a pas pu être envoyé</p>\n          <p class="validation hidden">Votre message a bien été envoyé</p>\n        </div>\n      </div>\n      <div id="fp_loading" class="fp_loading"></div>\n    </div>\n  </div>\n</div>');
-    }
-    return buf.join("");
-};
-
 // arts.jade compiled template
 exports.arts = function anonymous(locals, attrs, escape, rethrow, merge) {
     attrs = attrs || jade.attrs;
@@ -79,6 +49,51 @@ exports.arts = function anonymous(locals, attrs, escape, rethrow, merge) {
             }
         }).call(this);
         buf.push('\n    </div>\n  </div>\n</div>\n<div id="fp_scrollWrapper" class="fp_scrollWrapper"><span id="fp_prev_thumb" class="fp_prev_thumb"></span>\n  <div id="slider" class="slider"></div><span id="fp_next_thumb" class="fp_next_thumb"></span>\n</div>\n<div id="fp_overlay" class="fp_overlay"></div>\n<div id="fp_loading" class="fp_loading"></div>\n<div id="fp_next" class="fp_next"></div>\n<div id="fp_prev" class="fp_prev"></div>\n<div id="fp_close" class="fp_close"></div>\n<script type="text/javascript" charset="utf-8" src="javascripts/slider.js"></script>');
+    }
+    return buf.join("");
+};
+
+// contact.jade compiled template
+exports.contact = function anonymous(locals, attrs, escape, rethrow, merge) {
+    attrs = attrs || jade.attrs;
+    escape = escape || jade.escape;
+    rethrow = rethrow || jade.rethrow;
+    merge = merge || jade.merge;
+    var buf = [];
+    with (locals || {}) {
+        var interp;
+        var __indent = [];
+        buf.push('\n<div class="screen-margin">\n  <div class="row-fluid">\n    <div class="span3"></div>\n    <div class="span6 common-back pt10 contact">\n      <div class="row">\n        <div class="span3"><span>Votre email :&nbsp;</span></div>\n        <div class="span6">\n          <input id="email" type="email" class="w100"/>\n        </div>\n        <div id="warnMail" class="warning span3 hidden">\n          <p>Email incorrect</p>\n        </div>\n      </div>\n      <div class="row">\n        <div class="span3"><span>Votre message :&nbsp;</span></div>\n        <div class="span6">\n          <textarea id="mailText" rows="" cols=""></textarea>\n        </div>\n        <div id="warnText" class="warning span3 p20 hidden">\n          <p>N\'oubliez pas d\'écrire un message</p>\n        </div>\n      </div>\n      <div class="row mt10">\n        <div class="span3"></div>\n        <div class="span6 centered">\n          <input type="submit" value="Envoyer" onclick="sendMail();"/>\n        </div>\n      </div>\n      <div class="row">\n        <div class="span3"></div>\n        <div class="span6 centered">\n          <p class="error hidden">Votre message n\'a pas pu être envoyé</p>\n          <p class="validation hidden">Votre message a bien été envoyé</p>\n        </div>\n      </div>\n      <div id="fp_loading" class="fp_loading"></div>\n    </div>\n  </div>\n</div>');
+    }
+    return buf.join("");
+};
+
+// email.jade compiled template
+exports.email = function anonymous(locals, attrs, escape, rethrow, merge) {
+    attrs = attrs || jade.attrs;
+    escape = escape || jade.escape;
+    rethrow = rethrow || jade.rethrow;
+    merge = merge || jade.merge;
+    var buf = [];
+    with (locals || {}) {
+        var interp;
+        var __indent = [];
+        buf.push('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\n<html>\n  <head>\n    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>\n  </head>\n  <body>\n    <p>Hello</p>\n    <p>text= text</p>\n    <p>{#text}</p>\n  </body>\n</html>');
+    }
+    return buf.join("");
+};
+
+// err404.jade compiled template
+exports.err404 = function anonymous(locals, attrs, escape, rethrow, merge) {
+    attrs = attrs || jade.attrs;
+    escape = escape || jade.escape;
+    rethrow = rethrow || jade.rethrow;
+    merge = merge || jade.merge;
+    var buf = [];
+    with (locals || {}) {
+        var interp;
+        var __indent = [];
+        buf.push('\n<div class="miss"></div>');
     }
     return buf.join("");
 };
@@ -139,8 +154,8 @@ exports.myself = function anonymous(locals, attrs, escape, rethrow, merge) {
     return buf.join("");
 };
 
-// err404.jade compiled template
-exports.err404 = function anonymous(locals, attrs, escape, rethrow, merge) {
+// works.jade compiled template
+exports.works = function anonymous(locals, attrs, escape, rethrow, merge) {
     attrs = attrs || jade.attrs;
     escape = escape || jade.escape;
     rethrow = rethrow || jade.rethrow;
@@ -149,7 +164,7 @@ exports.err404 = function anonymous(locals, attrs, escape, rethrow, merge) {
     with (locals || {}) {
         var interp;
         var __indent = [];
-        buf.push('\n<div class="miss"></div>');
+        buf.push('\n<div class="screen-margin">\n  <div class="row-fluid">\n    <div class="span1"></div>\n    <div class="span1">\n      <div class="common-back common-img-btn"></div>\n    </div>\n    <div class="span8">\n      <div class="common-back pt10 text-content">\n        <p>\n          Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.\n          Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.\n          Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.\n        </p>\n      </div>\n    </div>\n  </div>\n</div>');
     }
     return buf.join("");
 };
