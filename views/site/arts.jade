@@ -1,15 +1,15 @@
 div#fp_thumbContainer
-  div#fp_thumbScroller
-    div.imgContainer
-      each image in images
-        div.content
-          div
-            a(href='#')
-              img(src='data:image/jpg;base64,' + image.get('data'), alt='data:image/jpg;base64,' + image.get('data')).thumb
+    div#fp_thumbScroller
+        div.imgContainer
+            each image in images
+                div.content
+                    div
+                        a(href='#')
+                            img(src='data:image/jpg;base64,' + image.get('data'), alt='data:image/jpg;base64,' + image.get('data')).thumb
 div#fp_scrollWrapper.fp_scrollWrapper
-  span#fp_prev_thumb.fp_prev_thumb
-  div#slider.slider
-  span#fp_next_thumb.fp_next_thumb
+    span#fp_prev_thumb.fp_prev_thumb
+    div#slider.slider
+    span#fp_next_thumb.fp_next_thumb
 div#fp_overlay.fp_overlay
 div#fp_loading.fp_loading
 div#fp_next.fp_next

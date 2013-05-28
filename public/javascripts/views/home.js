@@ -4,7 +4,7 @@ App.HomeView = Backbone.View.extend({
     	$('.slide_loading').show();
 
     	App.images.fetch({
-    		success: _.bind(function(col, res) {
+    		success: _.bind(function(col) {
     			App.pictures.add(col.where({type: 'pictures'}));
     			App.collages.add(col.where({type: 'collages'}));
     			App.drawings.add(col.where({type: 'drawings'}));

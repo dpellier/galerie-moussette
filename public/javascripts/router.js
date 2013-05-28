@@ -9,24 +9,24 @@ App.MainRouter = Backbone.Router.extend({
 		"contact": "contact"
 	},
 	home: function() {
-		var homeView = new App.HomeView();
+		new App.HomeView();
 	},
 	myself: function() {
-		var myselfView = new App.MyselfView();
+		new App.MyselfView();
 	},
 	pictures: function() {
-		var picturesView = new App.PicturesView();
+		new App.PicturesView();
 	},
 	collages: function() {
-		var collagesView = new App.CollagesView();
+		new App.CollagesView();
 	},
 	drawings: function() {
-		var drawingsView = new App.DrawingsView();
+		new App.DrawingsView();
 	},
 	works: function() {
-		var worksView = new App.WorksView();
+		new App.WorksView();
 	},
 	contact: function() {
-		var contactView = new App.ContactView();
+		new App.ContactView();
 	}
 });

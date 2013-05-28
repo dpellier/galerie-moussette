@@ -15,13 +15,12 @@ exports.arts = function anonymous(locals, attrs, escape, rethrow, merge) {
     var buf = [];
     with (locals || {}) {
         var interp;
-        var __indent = [];
-        buf.push('\n<div id="fp_thumbContainer">\n  <div id="fp_thumbScroller">\n    <div class="imgContainer">');
+        buf.push('<div id="fp_thumbContainer"><div id="fp_thumbScroller"><div class="imgContainer">');
         (function() {
             if ("number" == typeof images.length) {
                 for (var $index = 0, $$l = images.length; $index < $$l; $index++) {
                     var image = images[$index];
-                    buf.push('\n      <div class="content">\n        <div><a href="#"><img');
+                    buf.push('<div class="content"><div><a href="#"><img');
                     buf.push(attrs({
                         src: "data:image/jpg;base64," + image.get("data"),
                         alt: "data:image/jpg;base64," + image.get("data"),
@@ -30,12 +29,14 @@ exports.arts = function anonymous(locals, attrs, escape, rethrow, merge) {
                         src: true,
                         alt: true
                     }));
-                    buf.push("/></a></div>\n      </div>");
+                    buf.push("/></a></div></div>");
                 }
             } else {
+                var $$l = 0;
                 for (var $index in images) {
+                    $$l++;
                     var image = images[$index];
-                    buf.push('\n      <div class="content">\n        <div><a href="#"><img');
+                    buf.push('<div class="content"><div><a href="#"><img');
                     buf.push(attrs({
                         src: "data:image/jpg;base64," + image.get("data"),
                         alt: "data:image/jpg;base64," + image.get("data"),
@@ -44,11 +45,11 @@ exports.arts = function anonymous(locals, attrs, escape, rethrow, merge) {
                         src: true,
                         alt: true
                     }));
-                    buf.push("/></a></div>\n      </div>");
+                    buf.push("/></a></div></div>");
                 }
             }
         }).call(this);
-        buf.push('\n    </div>\n  </div>\n</div>\n<div id="fp_scrollWrapper" class="fp_scrollWrapper"><span id="fp_prev_thumb" class="fp_prev_thumb"></span>\n  <div id="slider" class="slider"></div><span id="fp_next_thumb" class="fp_next_thumb"></span>\n</div>\n<div id="fp_overlay" class="fp_overlay"></div>\n<div id="fp_loading" class="fp_loading"></div>\n<div id="fp_next" class="fp_next"></div>\n<div id="fp_prev" class="fp_prev"></div>\n<div id="fp_close" class="fp_close"></div>\n<script type="text/javascript" charset="utf-8" src="javascripts/slider.js"></script>');
+        buf.push('</div></div></div><div id="fp_scrollWrapper" class="fp_scrollWrapper"><span id="fp_prev_thumb" class="fp_prev_thumb"></span><div id="slider" class="slider"></div><span id="fp_next_thumb" class="fp_next_thumb"></span></div><div id="fp_overlay" class="fp_overlay"></div><div id="fp_loading" class="fp_loading"></div><div id="fp_next" class="fp_next"></div><div id="fp_prev" class="fp_prev"></div><div id="fp_close" class="fp_close"></div><script type="text/javascript" charset="utf-8" src="javascripts/slider.js"></script>');
     }
     return buf.join("");
 };
@@ -62,8 +63,7 @@ exports.contact = function anonymous(locals, attrs, escape, rethrow, merge) {
     var buf = [];
     with (locals || {}) {
         var interp;
-        var __indent = [];
-        buf.push('\n<div class="screen-margin">\n  <div class="row-fluid">\n    <div class="span3"></div>\n    <div class="span6 common-back pt10 contact">\n      <div class="row">\n        <div class="span3"><span>Votre email :&nbsp;</span></div>\n        <div class="span6">\n          <input id="email" type="email" class="w100"/>\n        </div>\n        <div id="warnMail" class="warning span3 hidden">\n          <p>Email incorrect</p>\n        </div>\n      </div>\n      <div class="row">\n        <div class="span3"><span>Votre message :&nbsp;</span></div>\n        <div class="span6">\n          <textarea id="mailText" rows="" cols=""></textarea>\n        </div>\n        <div id="warnText" class="warning span3 p20 hidden">\n          <p>N\'oubliez pas d\'écrire un message</p>\n        </div>\n      </div>\n      <div class="row mt10">\n        <div class="span3"></div>\n        <div class="span6 centered">\n          <input type="submit" value="Envoyer" onclick="sendMail();"/>\n        </div>\n      </div>\n      <div class="row">\n        <div class="span3"></div>\n        <div class="span6 centered">\n          <p class="error hidden">Votre message n\'a pas pu être envoyé</p>\n          <p class="validation hidden">Votre message a bien été envoyé</p>\n        </div>\n      </div>\n      <div id="fp_loading" class="fp_loading"></div>\n    </div>\n  </div>\n</div>');
+        buf.push('<div class="screen-margin"><div class="row-fluid"><div class="span3"></div><div class="span6 common-back pt10 contact"><div class="row"><div class="span3"><span>Votre email :&nbsp;</span></div><div class="span6"><input id="email" type="email" class="w100"/></div><div id="warnMail" class="warning span3 hidden"><p>Email incorrect</p></div></div><div class="row"><div class="span3"><span>Votre message :&nbsp;</span></div><div class="span6"><textarea id="mailText" rows="" cols=""></textarea></div><div id="warnText" class="warning span3 p20 hidden"><p>N\'oubliez pas d\'écrire un message</p></div></div><div class="row mt10"><div class="span3"></div><div class="span6 centered"><input type="submit" value="Envoyer" onclick="sendMail();"/></div></div><div class="row"><div class="span3"></div><div class="span6 centered"><p class="error hidden">Votre message n\'a pas pu être envoyé</p><p class="validation hidden">Votre message a bien été envoyé</p></div></div><div id="fp_loading" class="fp_loading"></div></div></div></div>');
     }
     return buf.join("");
 };
@@ -77,8 +77,7 @@ exports.email = function anonymous(locals, attrs, escape, rethrow, merge) {
     var buf = [];
     with (locals || {}) {
         var interp;
-        var __indent = [];
-        buf.push('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\n<html>\n  <head>\n    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>\n  </head>\n  <body>\n    <p>Hello</p>\n    <p>text= text</p>\n    <p>{#text}</p>\n  </body>\n</html>');
+        buf.push('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/></head><body><p>Hello</p><p>text= text</p><p>{#text}</p></body></html>');
     }
     return buf.join("");
 };
@@ -92,8 +91,7 @@ exports.err404 = function anonymous(locals, attrs, escape, rethrow, merge) {
     var buf = [];
     with (locals || {}) {
         var interp;
-        var __indent = [];
-        buf.push('\n<div class="miss"></div>');
+        buf.push('<div class="miss"></div>');
     }
     return buf.join("");
 };
@@ -107,13 +105,12 @@ exports.home = function anonymous(locals, attrs, escape, rethrow, merge) {
     var buf = [];
     with (locals || {}) {
         var interp;
-        var __indent = [];
-        buf.push('\n<div id="homeGallery">');
+        buf.push('<div id="homeGallery">');
         (function() {
             if ("number" == typeof images.length) {
                 for (var $index = 0, $$l = images.length; $index < $$l; $index++) {
                     var image = images[$index];
-                    buf.push('\n  <div class="home-img hidden"><img');
+                    buf.push('<div class="home-img hidden"><img');
                     buf.push(attrs({
                         src: "data:image/jpg;base64," + image.get("data")
                     }, {
@@ -122,9 +119,11 @@ exports.home = function anonymous(locals, attrs, escape, rethrow, merge) {
                     buf.push("/></div>");
                 }
             } else {
+                var $$l = 0;
                 for (var $index in images) {
+                    $$l++;
                     var image = images[$index];
-                    buf.push('\n  <div class="home-img hidden"><img');
+                    buf.push('<div class="home-img hidden"><img');
                     buf.push(attrs({
                         src: "data:image/jpg;base64," + image.get("data")
                     }, {
@@ -134,7 +133,7 @@ exports.home = function anonymous(locals, attrs, escape, rethrow, merge) {
                 }
             }
         }).call(this);
-        buf.push("\n</div>");
+        buf.push("</div>");
     }
     return buf.join("");
 };
@@ -148,8 +147,7 @@ exports.myself = function anonymous(locals, attrs, escape, rethrow, merge) {
     var buf = [];
     with (locals || {}) {
         var interp;
-        var __indent = [];
-        buf.push('\n<div class="screen-margin">\n  <div class="row-fluid">\n    <div class="span2 common-back pt10 centered"><img src="images/portrait.jpg"/>\n      <p class="pt15 prl5">Blablabla hem djljd Blablabla hem djljd Blablabla</p>\n      <p class="prl5">Blablabla hem djljd Blablabla hem djljd Blablabla</p>\n    </div>\n    <div class="span10 common-back pt10 text-content">\n      <p>\n        Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.\n        Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.\n        Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.\n        Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.\n        Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.\n        Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.\n        Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.\n        Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.\n        Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.\n      </p>\n    </div>\n  </div>\n</div>');
+        buf.push('<div class="screen-margin"><div class="row-fluid"><div class="span2 common-back pt10 centered"><img src="images/portrait.jpg"/><p class="pt15 prl5">Blablabla hem djljd Blablabla hem djljd Blablabla</p><p class="prl5">Blablabla hem djljd Blablabla hem djljd Blablabla</p></div><div class="span10 common-back pt10 text-content"><p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.\nDonec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.\nDonec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.\nDonec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.\nDonec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.\nDonec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.\nDonec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.\nDonec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.\nDonec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p></div></div></div>');
     }
     return buf.join("");
 };
@@ -163,8 +161,7 @@ exports.works = function anonymous(locals, attrs, escape, rethrow, merge) {
     var buf = [];
     with (locals || {}) {
         var interp;
-        var __indent = [];
-        buf.push('\n<div class="screen-margin">\n  <div class="row-fluid">\n    <div class="span1"></div>\n    <div class="span1">\n      <div class="common-back common-img-btn"></div>\n    </div>\n    <div class="span8">\n      <div class="common-back pt10 text-content">\n        <p>\n          Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.\n          Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.\n          Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.\n        </p>\n      </div>\n    </div>\n  </div>\n</div>');
+        buf.push('<div class="screen-margin"><div class="row-fluid"><div class="span1"></div><div class="span1"><div class="common-back common-img-btn"></div></div><div class="span8"><div class="common-back pt10 text-content"><p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.\nDonec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.\nDonec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p></div></div></div></div>');
     }
     return buf.join("");
 };
