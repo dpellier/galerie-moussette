@@ -6,13 +6,8 @@ db = mongoose.connect(config.databaseUri);
 
 var Image = db.model('Image', new Schema({
 	'type': {type: String, index: true},
-	'data': String,
-	'smallData': String
-}));
-
-var User = db.model('User', new Schema({
-	'name': {type: String, unique: true, index: true},
-	'password': String
+	'href': String,
+	'hrefMin': String
 }));
 
 var Work = db.model('Work', new Schema({
@@ -22,5 +17,4 @@ var Work = db.model('Work', new Schema({
 }));
 
 exports.Image = Image;
-exports.User = User;
 exports.Work = Work;

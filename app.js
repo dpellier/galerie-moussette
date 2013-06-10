@@ -2,8 +2,6 @@ var express = require('express'),
     mailer = require('express-mailer'),
     Image = require('./models/models').Image,
     Work = require('./models/models').Work,
-    login = require('./login'),
-    admin = require('./admin'),
     config = require('./config').config(),
     http = require('http'),
     path = require('path');
@@ -24,7 +22,6 @@ mailer.extend(app, {
 app.configure(function() {
     app.set('port', process.env.PORT || 3000);
     app.set('views', __dirname + '/views/admin');
-    app.set('view engine', 'jade');	// engine is only use for admin
     app.use(express.favicon());
     app.use(express.logger('dev'));
     app.use(express.bodyParser());
@@ -72,15 +69,6 @@ app.get('/api/works', function(req, res) {
 	});
 });
 
-/*
- * Admin routing
- */
-app.post('/login', login.authenticate);
-app.get('/login', login.login);
-app.get('/logout', login.logout);
-app.get('/admin', admin.main);
-app.get('/admin/:media/:type', admin.main);
-
 // Default to 404
 app.get('*', function(req, res) {
 	res.send(404);
@@ -90,7 +78,6 @@ app.get('*', function(req, res) {
 /*
  * Post handlers
  */
-app.post('/upload/:type', admin.upload);
 app.post('/send', function(req, res) {
 	// TODO fix template problem
 	res.sendEmail('email', {

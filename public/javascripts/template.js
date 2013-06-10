@@ -22,8 +22,8 @@ exports.arts = function anonymous(locals, attrs, escape, rethrow, merge) {
                     var image = images[$index];
                     buf.push('<div class="content"><div><a href="#"><img');
                     buf.push(attrs({
-                        src: "data:image/jpg;base64," + image.get("data"),
-                        alt: "data:image/jpg;base64," + image.get("data"),
+                        src: "" + image.get("href"),
+                        alt: "" + image.get("href"),
                         "class": "thumb"
                     }, {
                         src: true,
@@ -38,8 +38,8 @@ exports.arts = function anonymous(locals, attrs, escape, rethrow, merge) {
                     var image = images[$index];
                     buf.push('<div class="content"><div><a href="#"><img');
                     buf.push(attrs({
-                        src: "data:image/jpg;base64," + image.get("data"),
-                        alt: "data:image/jpg;base64," + image.get("data"),
+                        src: "" + image.get("href"),
+                        alt: "" + image.get("href"),
                         "class": "thumb"
                     }, {
                         src: true,
@@ -63,7 +63,7 @@ exports.contact = function anonymous(locals, attrs, escape, rethrow, merge) {
     var buf = [];
     with (locals || {}) {
         var interp;
-        buf.push('<div class="screen-margin"><div class="row-fluid"><div class="span3"></div><div class="span6 common-back pt10 contact"><div class="row"><div class="span3"><span>Votre email :&nbsp;</span></div><div class="span6"><input id="email" type="email" class="w100"/></div><div id="warnMail" class="warning span3 hidden"><p>Email incorrect</p></div></div><div class="row"><div class="span3"><span>Votre message :&nbsp;</span></div><div class="span6"><textarea id="mailText" rows="" cols=""></textarea></div><div id="warnText" class="warning span3 p20 hidden"><p>N\'oubliez pas d\'écrire un message</p></div></div><div class="row mt10"><div class="span3"></div><div class="span6 centered"><input type="submit" value="Envoyer" onclick="sendMail();"/></div></div><div class="row"><div class="span3"></div><div class="span6 centered"><p class="error hidden">Votre message n\'a pas pu être envoyé</p><p class="validation hidden">Votre message a bien été envoyé</p></div></div><div id="fp_loading" class="fp_loading"></div></div></div></div>');
+        buf.push('<div class="screen-margin"><div class="row-fluid"><div class="span3"></div><div class="span6 common-back pt10 contact"><div class="row"><div class="span3"><span>Votre email :&nbsp;</span></div><div class="span6"><input id="email" type="email" class="w100"/></div><div id="warnMail" class="warning span3 hidden"><p>Email incorrect</p></div></div><div class="row"><div class="span3"><span>Votre message :&nbsp;</span></div><div class="span6"><textarea id="mailText" rows="" cols=""></textarea></div><div id="warnText" class="warning span3 p20 hidden"><p>N\'oubliez pas d\'écrire un message</p></div></div><div class="row mt10"><div class="span3"></div><div class="span6 centered"><input type="submit" value="Envoyer"/></div></div><div class="row"><div class="span3"></div><div class="span6 centered"><p class="error hidden">Votre message n\'a pas pu être envoyé</p><p class="validation hidden">Votre message a bien été envoyé</p></div></div><div id="fp_loading" class="fp_loading"></div></div></div></div>');
     }
     return buf.join("");
 };
@@ -112,7 +112,7 @@ exports.home = function anonymous(locals, attrs, escape, rethrow, merge) {
                     var image = images[$index];
                     buf.push('<div class="home-img hidden"><img');
                     buf.push(attrs({
-                        src: "data:image/jpg;base64," + image.get("data")
+                        src: "" + image.get("hrefMin")
                     }, {
                         src: true
                     }));
@@ -125,7 +125,7 @@ exports.home = function anonymous(locals, attrs, escape, rethrow, merge) {
                     var image = images[$index];
                     buf.push('<div class="home-img hidden"><img');
                     buf.push(attrs({
-                        src: "data:image/jpg;base64," + image.get("data")
+                        src: "" + image.get("hrefMin")
                     }, {
                         src: true
                     }));

@@ -24,7 +24,7 @@ function createPolaroid(image) {
     
     parent.draggable({
     	cursor: 'move',
-    	start: function(e, ui) {
+    	start: function(e) {
     		var elem = $(e.target);
     		elem.css('z-index', window.homeZ);
     		window.homeZ++;
@@ -52,39 +52,4 @@ function applyBrowserCssProperty(elem, values) {
 		elem.css(values.Opera.name, values.Opera.value);
 	else if (/Safari[\/\s](\d+\.\d+)/.test(nav))
 		elem.css(values.Safari.name, values.Safari.value);
-}
-
-// TODO move this to the contact view
-function sendMail() {
-	var email = $('#email').val(),
-		text = $('#mailText').val(),
-		ok = true;
-	
-	$('.validation').addClass('hidden');
-	$('.error').addClass('hidden');
-	
-	if (!/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email)) {
-		$('#warnMail').removeClass('hidden');
-		ok = false;
-	} else
-		$('#warnMail').addClass('hidden');
-	
-	if (text == '') {
-		$('#warnText').removeClass('hidden');
-		ok = false;
-	} else
-		$('#warnText').addClass('hidden');
-	
-	if (ok) {
-		$('#fp_loading').show();
-		$.post('/send', {email: email, text: text})
-			.success(function() {
-				$('.validation').removeClass('hidden');
-				$('#fp_loading').hide();
-			})
-			.error(function() {
-				$('.error').removeClass('hidden');
-				$('#fp_loading').hide();
-			});
-	}
 }
