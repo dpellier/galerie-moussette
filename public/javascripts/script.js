@@ -53,3 +53,8 @@ function applyBrowserCssProperty(elem, values) {
 	else if (/Safari[\/\s](\d+\.\d+)/.test(nav))
 		elem.css(values.Safari.name, values.Safari.value);
 }
+
+function shufflingArray(array) {
+    for(var j, x, i = array.length; i; j = parseInt(Math.random() * i), x = array[--i], array[i] = array[j], array[j] = x);
+    return array;
+}

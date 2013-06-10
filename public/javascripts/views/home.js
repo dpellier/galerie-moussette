@@ -14,7 +14,7 @@ App.HomeView = Backbone.View.extend({
     	});
     },
 	render: function() {
-		$(this.el).html(templatizer.home({images:App.images.models}));
+		$(this.el).html(templatizer.home({images:shufflingArray(App.images.models)}));
 		
 		$('#homeGallery').imagesLoaded({
 			progress: function() {
