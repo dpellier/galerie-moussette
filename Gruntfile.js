@@ -1,6 +1,7 @@
 module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
 	grunt.initConfig({
         uglify: {
@@ -23,6 +24,15 @@ module.exports = function(grunt) {
                     './public/min.css': './public/stylesheets/*.css'
                 }
             }
+        },
+        watch: {
+            scripts: {
+                files: ['**/*.js'],
+                tasks: ['start'],
+                options: {
+                    nospawn: true
+                }
+            }
         }
 	});
 
@@ -30,9 +40,18 @@ module.exports = function(grunt) {
         require('templatizer')(__dirname + '/views/site', __dirname + '/public/javascripts/template.js');
     });
 
+    grunt.registerTask('start', function() {
+        grunt.util.spawn({
+            cmd: 'node',
+            args: ['app.js']
+        });
+        grunt.task.run('watch');
+    });
+
 	grunt.registerTask('default', [
         'generateTemplate',
         'cssmin',
-        'uglify'
+        //'uglify',
+        'start'
     ]);
 };
