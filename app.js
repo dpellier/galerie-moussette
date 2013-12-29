@@ -21,7 +21,8 @@ mailer.extend(app, {
 
 app.configure(function() {
     app.set('port', process.env.PORT || 3000);
-    app.set('views', __dirname + '/views/admin');
+    app.set('views', __dirname + '/views');
+    app.set('view engine', 'jade');
     app.use(express.favicon());
     app.use(express.logger('dev'));
     app.use(express.bodyParser());
@@ -80,11 +81,11 @@ app.get('*', function(req, res) {
  */
 app.post('/send', function(req, res) {
 	// TODO fix template problem
-	res.sendEmail('email', {
+	res.mailer.send('email', {
 		from: req.body.email,
 		to: 'dpellier@gmail.com',
 	    subject: 'La galerie - message de ' + req.body.email,
-	    text: req.body.text
+        text: req.body.text
 	}, function (err) {
 		if (err) {
 			console.log(err);

@@ -12,10 +12,14 @@ App.ContactView = Backbone.View.extend({
     sendMail: function() {
         var email = $('#email').val(),
             text = $('#mailText').val(),
+            sendBtn = $('#send'),
+            validation = $('.validation'),
+            error = $('.error'),
+            loading = $('#fp_loading'),
             ok = true;
 
-        $('.validation').addClass('hidden');
-        $('.error').addClass('hidden');
+        validation.addClass('hidden');
+        error.addClass('hidden');
 
         if (!/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email)) {
             $('#warnMail').removeClass('hidden');
@@ -29,18 +33,22 @@ App.ContactView = Backbone.View.extend({
             ok = false;
         } else {
             $('#warnText').addClass('hidden');
+            text = text.replace(/\n/g, '<br />');
         }
 
         if (ok) {
-            $('#fp_loading').show();
+            loading.show();
+            sendBtn.attr('disabled', 'disabled');
+
             $.post('/send', {email: email, text: text})
                 .success(function() {
-                    $('.validation').removeClass('hidden');
-                    $('#fp_loading').hide();
+                    validation.removeClass('hidden');
+                    loading.hide();
                 })
                 .error(function() {
-                    $('.error').removeClass('hidden');
-                    $('#fp_loading').hide();
+                    error.removeClass('hidden');
+                    loading.hide();
+                    sendBtn.removeAttr('disabled');
                 });
         }
     }

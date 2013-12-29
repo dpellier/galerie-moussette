@@ -63,21 +63,7 @@ exports.contact = function anonymous(locals, attrs, escape, rethrow, merge) {
     var buf = [];
     with (locals || {}) {
         var interp;
-        buf.push('<div class="screen-margin"><div class="row-fluid"><div class="span3"></div><div class="span6 common-back pt10 contact"><div class="row"><div class="span3"><span>Votre email :&nbsp;</span></div><div class="span6"><input id="email" type="email" class="w100"/></div><div id="warnMail" class="warning span3 hidden"><p>Email incorrect</p></div></div><div class="row"><div class="span3"><span>Votre message :&nbsp;</span></div><div class="span6"><textarea id="mailText" rows="" cols=""></textarea></div><div id="warnText" class="warning span3 p20 hidden"><p>N\'oubliez pas d\'écrire un message</p></div></div><div class="row mt10"><div class="span3"></div><div class="span6 centered"><input type="submit" value="Envoyer"/></div></div><div class="row"><div class="span3"></div><div class="span6 centered"><p class="error hidden">Votre message n\'a pas pu être envoyé</p><p class="validation hidden">Votre message a bien été envoyé</p></div></div><div id="fp_loading" class="fp_loading"></div></div></div></div>');
-    }
-    return buf.join("");
-};
-
-// email.jade compiled template
-exports.email = function anonymous(locals, attrs, escape, rethrow, merge) {
-    attrs = attrs || jade.attrs;
-    escape = escape || jade.escape;
-    rethrow = rethrow || jade.rethrow;
-    merge = merge || jade.merge;
-    var buf = [];
-    with (locals || {}) {
-        var interp;
-        buf.push('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/></head><body><p>Hello</p><p>text= text</p><p>{#text}</p></body></html>');
+        buf.push('<div class="screen-margin"><div class="row-fluid"><div class="span3"></div><div class="span6 common-back pt10 contact"><div class="row"><div class="span3"><span>Votre email :&nbsp;</span></div><div class="span6"><input id="email" type="email" class="w100"/></div><div id="warnMail" class="warning span3 hidden"><p>Email incorrect</p></div></div><div class="row"><div class="span3"><span>Votre message :&nbsp;</span></div><div class="span6"><textarea id="mailText" rows="" cols=""></textarea></div><div id="warnText" class="warning span3 p20 hidden"><p>N\'oubliez pas d\'écrire un message</p></div></div><div class="row mt10"><div class="span3"></div><div class="span6 centered"><input id="send" type="submit" value="Envoyer"/></div></div><div class="row"><div class="span3"></div><div class="span6 centered"><p class="error hidden">Votre message n\'a pas pu être envoyé</p><p class="validation hidden">Votre message a bien été envoyé</p></div></div><div id="fp_loading" class="fp_loading"></div></div></div></div>');
     }
     return buf.join("");
 };
