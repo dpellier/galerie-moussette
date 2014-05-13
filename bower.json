@@ -1,9 +1,11 @@
 {
     "name": "galeriemoussette",
     "version": "0.0.1",
-    "dependencies": {
+    "homepage": "https://github.com/dpellier/galerie-moussette",
+    "authors": ["Damien Pellier"],
+    "devDependencies": {
         "angular": "~1.2.0",
-        "angular-route": "~1.2.0"
-    },
-    "devDependencies": {}
+        "angular-route": "~1.2.0",
+        "tweenjs": "*"
+    }
 }

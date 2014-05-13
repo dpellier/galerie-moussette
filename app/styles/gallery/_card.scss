@@ -1,0 +1,16 @@
+@import 'variables';
+
+$card-height: 200px;
+$card-border: 3px;
+
+.card {
+    border: solid $card-border $black;
+    height: $card-height;
+    left: 0;
+    position: absolute;
+
+    &__image {
+        border: solid $white;
+        height: $card-height - $card-border * 2;
+    }
+}

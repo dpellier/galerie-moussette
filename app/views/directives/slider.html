@@ -1,0 +1,38 @@
+<div class="slider">
+    <div class="slider__images">
+        <div id="sliderContainer" class="slider__images__container">
+            <!--<div class="slider__images__container__tile" ng-repeat="image in images"-->
+                 <!--style="background-image: url('{{image}}')"-->
+                 <!--notify-on-load="{{image}}"-->
+                 <!--ng-click="openPicture($event)">-->
+            <!--</div>-->
+            <div class="slider__images__container__tile"
+                 ng-repeat="idx in [] | range:max"
+                 style="background-image: url('{{imageDealer.get(idx)}}')"
+                 id="sliderImg{{idx}}"
+                 notify-on-load="{{imageDealer.get(idx)}}"
+                 ng-click="openPicture($event)">
+            </div>
+        </div>
+    </div>
+
+    <div id="sliderNavigation" class="slider__navigation">
+        <div id="sliderCursor" class="slider__navigation__cursor"></div>
+    </div>
+
+    <div class="slider__modal" ng-show="showFullView">
+        <div class="slider__modal__container">
+            <div class="slider__modal__container__navigation slider__modal__container__navigation--previous" ng-click="previous($event)">
+                <i class="icon-chevron-left slider__modal__container__navigation--icon"></i>
+            </div>
+
+            <img id="sliderModalImage" class="slider__modal__container__image">
+
+            <div class="slider__modal__container__navigation slider__modal__container__navigation--next" ng-click="next($event)">
+                <i class="icon-chevron-right slider__modal__container__navigation--icon"></i>
+            </div>
+        </div>
+
+        <div class="slider__modal__layer"></div>
+    </div>
+</div>

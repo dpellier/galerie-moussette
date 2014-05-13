@@ -1,47 +1,40 @@
-<!doctype html>
+<!DOCTYPE html>
+<html>
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Galerie Moussette</title>
-        <meta name="description" content="Galerie d'art Yves Pellier">
-        <meta name="viewport" content="width=device-width">
-        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Galerie d'image de Moussette</title>
 
-        <!-- build:css(.tmp) styles/app.css -->
-        <link rel="stylesheet" href="styles/app.css">
+        <!-- build:css(.tmp) styles/gallery.css -->
+        <link rel="stylesheet" type="text/css" href="styles/gallery.css">
         <!-- endbuild -->
     </head>
-    <body ng-app="galerieApp">
-        <menu>
-        </menu>
+    <body ng-app="Gallery">
+        <ng-include src="'views/navbar.html'"></ng-include>
 
-        <div class="container" ng-view>
-        </div>
+        <div ng-view class="main-view"></div>
 
         <!-- build:js scripts/vendor.js -->
-        <script src="bower_components/angular/angular.js"></script>
-        <script src="bower_components/angular-route/angular-route.js"></script>
+        <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+        <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+        <script type="text/javascript" src="bower_components/tweenjs/src/Tween.js"></script>
         <!-- endbuild -->
 
-        <!--&lt;!&ndash; build:js scripts/plugins.js &ndash;&gt;-->
-        <!--<script src="bower_components/sass-bootstrap/js/affix.js"></script>-->
-        <!--<script src="bower_components/sass-bootstrap/js/alert.js"></script>-->
-        <!--<script src="bower_components/sass-bootstrap/js/dropdown.js"></script>-->
-        <!--<script src="bower_components/sass-bootstrap/js/tooltip.js"></script>-->
-        <!--<script src="bower_components/sass-bootstrap/js/modal.js"></script>-->
-        <!--<script src="bower_components/sass-bootstrap/js/transition.js"></script>-->
-        <!--<script src="bower_components/sass-bootstrap/js/button.js"></script>-->
-        <!--<script src="bower_components/sass-bootstrap/js/popover.js"></script>-->
-        <!--<script src="bower_components/sass-bootstrap/js/carousel.js"></script>-->
-        <!--<script src="bower_components/sass-bootstrap/js/scrollspy.js"></script>-->
-        <!--<script src="bower_components/sass-bootstrap/js/collapse.js"></script>-->
-        <!--<script src="bower_components/sass-bootstrap/js/tab.js"></script>-->
-        <!--&lt;!&ndash; endbuild &ndash;&gt;-->
-
-        <!-- build:js({.tmp,app}) scripts/app.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/directives/menu.js"></script>
-        <script src="scripts/directives/imageDraft.js"></script>
+        <!-- build:js(.tmp) scripts/scripts.js -->
+        <script type="text/javascript" src="scripts/app.js"></script>
+        <script type="text/javascript" src="scripts/imageCount.js"></script>
+        <script type="text/javascript" src="scripts/controllers/collagesCtrl.js"></script>
+        <script type="text/javascript" src="scripts/controllers/contactCtrl.js"></script>
+        <script type="text/javascript" src="scripts/controllers/drawingsCtrl.js"></script>
+        <script type="text/javascript" src="scripts/controllers/homeCtrl.js"></script>
+        <script type="text/javascript" src="scripts/controllers/picturesCtrl.js"></script>
+        <script type="text/javascript" src="scripts/directives/card.js"></script>
+        <script type="text/javascript" src="scripts/directives/slider.js"></script>
+        <script type="text/javascript" src="scripts/filters/filters.js"></script>
+        <script type="text/javascript" src="scripts/models/ImageDealer.js"></script>
+        <script type="text/javascript" src="scripts/services/animationService.js"></script>
+        <script type="text/javascript" src="scripts/services/imageLoadingService.js"></script>
+        <script type="text/javascript" src="scripts/template.js"></script>
         <!-- endbuild -->
     </body>
 </html>

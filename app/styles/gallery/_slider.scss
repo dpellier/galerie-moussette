@@ -1,0 +1,155 @@
+@import 'variables';
+
+$slider-margin-vertical: 40px;
+
+$navigation-height: 30px;
+$navigation-margin-vertical: 20px;
+$navigation-total-height: $navigation-height + ($navigation-margin-vertical * 2);
+
+$slider-fixed-height: $navigation-total-height + ($slider-margin-vertical * 2) + $navbar-height;
+
+
+.slider {
+    &__images {
+        @media (max-height: $tablet-screen-height - 1) {
+            height: $phone-screen-height - $slider-fixed-height;
+        }
+
+        @media (min-height: $tablet-screen-height) {
+            height: $tablet-screen-height - $slider-fixed-height;
+        }
+
+        @media (min-height: $medium-screen-height) {
+            height: $medium-screen-height - $slider-fixed-height;
+        }
+
+        @media (min-height: $big-screen-height) {
+            height: $big-screen-height - $slider-fixed-height;
+        }
+
+        background-color: $white;
+        box-shadow: $black-shadow;
+        margin: $slider-margin-vertical 0;
+        position: relative;
+        width: 100%;
+
+        &__container {
+            height: inherit;
+            position: absolute;
+            top: 0;
+
+            &__tile {
+                @media (max-height: $tablet-screen-height - 1) {
+                    max-width: $phone-screen-height - $slider-fixed-height + 50;
+                    width: $phone-screen-height - $slider-fixed-height + 50;
+                }
+
+                @media (min-height: $tablet-screen-height) {
+                    max-width: $tablet-screen-height - $slider-fixed-height + 50;
+                    width: $tablet-screen-height - $slider-fixed-height + 50;
+                }
+
+                @media (min-height: $medium-screen-height) {
+                    max-width: $medium-screen-height - $slider-fixed-height + 50;
+                    width: $medium-screen-height - $slider-fixed-height + 50;
+                }
+
+                @media (min-height: $big-screen-height) {
+                    max-width: $big-screen-height - $slider-fixed-height + 50;
+                    width: $big-screen-height - $slider-fixed-height + 50;
+                }
+
+                background-position: center center;
+                background-repeat: no-repeat;
+                cursor: pointer;
+                display: inline-block;
+                height: inherit;
+                margin: 0 50px;
+                text-align: center;
+            }
+        }
+    }
+
+    &__navigation {
+        background-color: $white;
+        border-radius: 5px;
+        box-shadow: $black-shadow;
+        height: $navigation-height;
+        margin: $navigation-margin-vertical auto;
+        width: 50%;
+
+        &__cursor {
+            $cursor-margin: 5px;
+            $cursor-size: $navigation-height + ($cursor-margin * 2);
+
+            background: linear-gradient(top, $gradient-light-gray 0%, $medium-gray 50%, $gradient-light-gray 100%);
+            border-radius: 5px;
+            box-shadow: 0 0 1px $black;
+            height: $cursor-size;
+            margin: -$cursor-margin 0 0;
+            position: absolute;
+            width: $cursor-size;
+
+            &:hover {
+                background: linear-gradient(top, $gradient-gray 0%, $silver 50%, $gradient-gray 100%);
+                cursor: move;
+            }
+        }
+    }
+
+    &__modal {
+        display: table;
+        height: 100%;
+        left: 0;
+        position: fixed;
+        text-align: center;
+        top: 0;
+        width: 100%;
+        z-index: 999;
+
+        &__container {
+            display: table-cell;
+            vertical-align: middle;
+
+            &__image {
+                max-height: 90%;
+                max-width: 90%;
+            }
+
+            &__navigation {
+                color: $white;
+                cursor: pointer;
+                display: table;
+                height: 10%;
+                position: absolute;
+                top: 45%;
+                width: 5%;
+
+                &--next {
+                    right: 0;
+                }
+
+                &--previous {
+                    left: 0;
+                }
+
+                &--icon {
+                    displya: table-cell;
+                    font-size: 3em;
+                    vertical-align: middle;
+                }
+            }
+        }
+
+        &__layer {
+            background-color: $black;
+            bottom: 0;
+            left: 0;
+            opacity: 0.5;
+            position: fixed;
+            right: 0;
+            top: 0;
+            z-index: -1;
+        }
+    }
+}
