@@ -1,0 +1,10 @@
+
+.card {
+    border: solid;
+    cursor: grab;
+    position: absolute;
+    
+    &:hover {
+        opacity: 0.5;
+    }
+}

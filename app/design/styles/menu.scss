@@ -1,0 +1,19 @@
+
+@import "variables";
+
+.menu {
+    height: $menuHeight;
+    list-style: none;
+    position: fixed;
+    top: 0;
+
+    > li {
+        float: left;
+        padding-right: 15px;
+
+        > a {
+            cursor: auto;
+            text-decoration: none;
+        }
+    }
+}

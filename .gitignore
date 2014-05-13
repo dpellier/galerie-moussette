@@ -1,4 +1,8 @@
 node_modules
-.project
-.idea
+.sass-cache
+app/bower_components
+.tmp
 *.iml
+*.bowerrc
+.grunt
+.editorconfig
